@@ -19,7 +19,7 @@ export const RadioButtonGroup = ({ children, name, onInputChange }) => {
 export const RadioButton = ({ name, value, onInputChange }) => (
   <>
     <input type="radio" name={name} value={value} onInputChange={onInputChange} />
-    <label htmlFor={value}>{value}></label>
+    <label htmlFor={value}>{value} </label>
   </>
 );
 
