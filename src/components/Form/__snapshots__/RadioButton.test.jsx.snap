@@ -12,7 +12,6 @@ exports[`RadioButton Component matches a snapshot 1`] = `
     htmlFor="POST"
   >
     POST
-    &gt;
   </label>
 </Fragment>
 `;
