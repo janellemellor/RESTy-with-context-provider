@@ -10,7 +10,16 @@ export const RESTyProvider = ({ children }) => {
   const [jsonBody, setJsonBody] = useState('');
   const [response, setResponse] = useState('');
 
-  //add onChange that sets url, method, jsonBody
+  const handleChange = ({ target }) => {
+    const setInputsFactory = {
+      url: setUrl,
+      method: setMethod,
+      jsonBody: setJsonBody
+    };
+
+    setInputsFactory[target.name](target.value);
+  };
+
   //add handleSubmit function that fetches from the service function and sets the response
   
   return (
@@ -28,6 +37,7 @@ export const useUrlRequest = () => {
   const { url } = useContext(RESTyContext);
   return url;
 };
+
 
 
 
