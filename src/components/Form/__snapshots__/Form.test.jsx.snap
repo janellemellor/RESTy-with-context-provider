@@ -7,13 +7,13 @@ exports[`Form Component matches a snapshot 1`] = `
   <fieldset>
     <input
       name="url-input"
-      onUrlChange={[Function]}
+      onChange={[Function]}
       type="text"
       value="https://github.com/janellemellor"
     />
     <RadioButtonGroup
       name="methods"
-      onInputChange={[Function]}
+      onuChange={[Function]}
     >
       <RadioButton
         value="GET"
@@ -36,7 +36,7 @@ exports[`Form Component matches a snapshot 1`] = `
     </button>
     <textarea
       name="jsonBody"
-      onJsonBodyChange={[Function]}
+      onChange={[Function]}
       value="{}"
     >
        

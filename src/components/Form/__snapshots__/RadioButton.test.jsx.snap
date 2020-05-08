@@ -4,7 +4,7 @@ exports[`RadioButton Component matches a snapshot 1`] = `
 <Fragment>
   <input
     name="methods"
-    onInputChange={[Function]}
+    onChange={[Function]}
     type="radio"
     value="POST"
   />

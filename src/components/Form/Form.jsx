@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { RadioButtonGroup, RadioButton } from './RadioButton';
 
-const Form = ({ onSubmit, url, onUrlChange, onInputChange, jsonBody, onJsonBodyChange }) => (
+const Form = ({ onSubmit, url, onChange, jsonBody }) => (
   <form onSubmit={onSubmit}>
     <fieldset>
-      <input name="url-input" type="text" value={url} onUrlChange={onUrlChange} />
-      <RadioButtonGroup name="methods" onInputChange={onInputChange} >
+      <input name="url-input" type="text" value={url} onChange={onChange} />
+      <RadioButtonGroup name="methods" onuChange={onChange} >
         <RadioButton value="GET" />
         <RadioButton value="POST" />
         <RadioButton value="PUT" />
@@ -14,7 +14,7 @@ const Form = ({ onSubmit, url, onUrlChange, onInputChange, jsonBody, onJsonBodyC
         <RadioButton value="DELETE" />
       </RadioButtonGroup>
       <button>Go!</button>
-      <textarea name="jsonBody" value={jsonBody} onJsonBodyChange={onJsonBodyChange}> </textarea>
+      <textarea name="jsonBody" value={jsonBody} onChange={onChange}> </textarea>
     </fieldset>    
   </form>
 );
@@ -22,10 +22,8 @@ const Form = ({ onSubmit, url, onUrlChange, onInputChange, jsonBody, onJsonBodyC
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   url: PropTypes.string.isRequired,
-  onUrlChange: PropTypes.func.isRequired,
-  onInputChange: PropTypes.func.isRequired, 
+  onChange: PropTypes.func.isRequired,
   jsonBody: PropTypes.string,
-  onJsonBodyChange: PropTypes.func
 };
 
 export default Form;
