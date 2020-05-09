@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext } from 'react';
 import { fetchRequest } from '../services/fetchRequest.js';
+import { useLocalStorage } from '../hooks/localStorage';
 
 const RESTyContext = createContext();
 
@@ -9,6 +10,7 @@ export const RESTyProvider = ({ children }) => {
   const [method, setMethod] = useState('GET');
   const [jsonBody, setJsonBody] = useState('');
   const [response, setResponse] = useState({});
+  const [history, setHistory] = useLocalStorage('history', []);
 
   const onChange = ({ target }) => {
     const setInputsFactory = {
@@ -25,6 +27,7 @@ export const RESTyProvider = ({ children }) => {
     fetchRequest(url, method, jsonBody)
       .then(res => {
         setResponse(res);
+        setHistory(prevHistory => [{ url, method }, ...prevHistory]);
       }); 
   };
 
@@ -34,7 +37,8 @@ export const RESTyProvider = ({ children }) => {
     jsonBody, 
     response, 
     onChange, 
-    onSubmit
+    onSubmit, 
+    history
   };
   
   return (

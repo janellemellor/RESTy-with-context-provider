@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from '../Form/Form';
 import Response from '../Response/Response';
+import History from '../History/History';
 import { RESTyProvider } from '../../hooks/RESTyProvider';
 
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
     <RESTyProvider >
       <Form />
       <Response />
+      <History />
     </RESTyProvider>
     
   );
