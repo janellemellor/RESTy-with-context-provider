@@ -1,6 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
-import PropTypes from 'prop-types';
-
+import { fetchRequest } from '../services/fetchRequest.js';
 
 const RESTyContext = createContext();
 
@@ -8,9 +7,9 @@ export const RESTyProvider = ({ children }) => {
   const [url, setUrl] = useState('');
   const [method, setMethod] = useState('GET');
   const [jsonBody, setJsonBody] = useState('');
-  const [response, setResponse] = useState('');
+  const [response, setResponse] = useState({});
 
-  const handleChange = ({ target }) => {
+  const onChange = ({ target }) => {
     const setInputsFactory = {
       url: setUrl,
       method: setMethod,
@@ -20,17 +19,19 @@ export const RESTyProvider = ({ children }) => {
     setInputsFactory[target.name](target.value);
   };
 
-  //add handleSubmit function that fetches from the service function and sets the response
+  const onSubmit = (event) => {
+    event.preventDefault();
+    fetchRequest(url, method, jsonBody)
+      .then(res => {
+        setResponse(res);
+      });
+  };
   
   return (
     <RESTyContext.Provider value={{ url, method, jsonBody, response }} >
       {children}
     </RESTyContext.Provider>
   );
-};
-
-RESTyProvider.propTypes = {
-  children: PropTypes.node
 };
 
 export const useUrlRequest = () => {
