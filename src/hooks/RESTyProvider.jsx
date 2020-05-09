@@ -9,20 +9,14 @@ export const RESTyProvider = ({ children }) => {
   const [jsonBody, setJsonBody] = useState('');
   const [response, setResponse] = useState({});
 
-  // const onChange = ({ target }) => {
-  //   const setInputsFactory = {
-  //     url: setUrl,
-  //     method: setMethod,
-  //     jsonBody: setJsonBody
-  //   };
-
-  //   setInputsFactory[target.name](target.value);
-  // };
-
   const onChange = ({ target }) => {
-    if(target.name === 'url') setUrl(target.value);
-    if(target.name === 'method') setMethod(target.value);
-    if(target.name === 'jsonBody') setJsonBody(target.value);
+    const setInputsFactory = {
+      url: setUrl,
+      method: setMethod,
+      jsonBody: setJsonBody
+    };
+
+    setInputsFactory[target.name](target.value);
   };
 
   const onSubmit = (event) => {
