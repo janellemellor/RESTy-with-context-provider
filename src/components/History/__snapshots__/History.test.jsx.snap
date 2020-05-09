@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`History Component matches a snapshot 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "jsonBody": "",
+      "method": "GET",
+      "onChange": [Function],
+      "onSubmit": [Function],
+      "response": Object {},
+      "url": "",
+    }
+  }
+>
+  <History
+    history={
+      Array [
+        Object {
+          "method": "GET",
+          "url": "https://github.com/janellemellor",
+        },
+        Object {
+          "method": "POST",
+          "url": "https://github.com/janellemellor",
+        },
+      ]
+    }
+  />
+</ContextProvider>
+`;
