@@ -1,9 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component renders App 1`] = `
-<RESTyProvider>
+<ContextProvider
+  value={
+    Object {
+      "history": Array [],
+      "jsonBody": "",
+      "method": "GET",
+      "onChange": [Function],
+      "onSubmit": [Function],
+      "response": Object {},
+      "url": "",
+    }
+  }
+>
   <Form />
   <Response />
   <History />
-</RESTyProvider>
+</ContextProvider>
 `;
