@@ -26,23 +26,37 @@ export const RESTyProvider = ({ children }) => {
         setResponse(res);
       });
   };
+
+  const context = {
+    url, 
+    method, 
+    jsonBody, 
+    response, 
+    onChange, 
+    onSubmit
+  };
   
   return (
-    <RESTyContext.Provider value={{ url, method, jsonBody, response }} >
+    <RESTyContext.Provider value={{ context }} >
       {children}
     </RESTyContext.Provider>
   );
 };
 
-export const useUrlRequest = () => {
-  const { url } = useContext(RESTyContext);
-  return url;
+export const useRESTy = () => {
+  const context = useContext(RESTyContext);
+  return context;
 };
 
-//create custom hook to for handle change
-export const useHandleChange = () => {
+// export const useUrlRequest = () => {
+//   const { url } = useContext(RESTyContext);
+//   return url;
+// };
+
+// //create custom hook to for handle change
+// export const useHandleChange = () => {
   
-};
+// };
 
 
 
