@@ -4,6 +4,7 @@ exports[`Form Component matches a snapshot 1`] = `
 <ContextProvider
   value={
     Object {
+      "history": Array [],
       "jsonBody": "",
       "method": "GET",
       "onChange": [Function],
