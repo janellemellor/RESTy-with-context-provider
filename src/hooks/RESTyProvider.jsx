@@ -24,7 +24,7 @@ export const RESTyProvider = ({ children }) => {
     fetchRequest(url, method, jsonBody)
       .then(res => {
         setResponse(res);
-      });
+      }); console.log(response);
   };
 
   const context = {
