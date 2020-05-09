@@ -8,8 +8,8 @@ const Form = () => {
   return (
     <form onSubmit={onSubmit}>
       <fieldset>
-        <input name="url-input" type="text" value={url} onChange={onChange} />
-        <RadioButtonGroup name="methods" onChange={onChange} >
+        <input name="url" type="text" value={url} onChange={onChange} />
+        <RadioButtonGroup name="method" onChange={onChange} >
           <RadioButton value="GET" />
           <RadioButton value="POST" />
           <RadioButton value="PUT" />
