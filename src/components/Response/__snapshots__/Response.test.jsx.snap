@@ -1,3 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Response Component matches a snapshot 1`] = `<pre />`;
+exports[`Response Component matches a snapshot 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "jsonBody": "",
+      "method": "GET",
+      "onChange": [Function],
+      "onSubmit": [Function],
+      "response": Object {},
+      "url": "",
+    }
+  }
+>
+  <Response
+    response="{}"
+  />
+</ContextProvider>
+`;

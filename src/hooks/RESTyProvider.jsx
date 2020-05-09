@@ -3,6 +3,7 @@ import { fetchRequest } from '../services/fetchRequest.js';
 
 const RESTyContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const RESTyProvider = ({ children }) => {
   const [url, setUrl] = useState('');
   const [method, setMethod] = useState('GET');
@@ -48,15 +49,6 @@ export const useRESTy = () => {
   return context;
 };
 
-// export const useUrlRequest = () => {
-//   const { url } = useContext(RESTyContext);
-//   return url;
-// };
-
-// //create custom hook to for handle change
-// export const useHandleChange = () => {
-  
-// };
 
 
 
