@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component renders App 1`] = `
+exports[`Response Component matches a snapshot 1`] = `
 <ContextProvider
   value={
     Object {
@@ -14,8 +14,8 @@ exports[`App component renders App 1`] = `
     }
   }
 >
-  <Form />
-  <Response />
-  <History />
+  <Response
+    response="{}"
+  />
 </ContextProvider>
 `;

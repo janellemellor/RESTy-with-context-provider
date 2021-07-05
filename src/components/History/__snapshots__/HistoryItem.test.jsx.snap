@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HistoryItem Component matches a snapshot 1`] = `
+<section>
+  <p>
+    GET
+  </p>
+  <p>
+    https://github.com/janellemellor
+  </p>
+</section>
+`;
